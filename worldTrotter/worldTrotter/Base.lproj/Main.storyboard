@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SKp-2d-AZ0">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Conversion View Controller-->
+        <!--Map-->
+        <scene sceneID="nFN-vP-i3u">
+            <objects>
+                <viewController id="Vyq-jh-jQE" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="FeL-Jd-dUa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="gLE-9T-qdq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFo-lh-jjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="115"/>
+        </scene>
+        <!--Conver-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="worldTrotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,6 +91,7 @@
                             <outletCollection property="gestureRecognizers" destination="X7n-lI-Kqt" appends="YES" id="xo6-1I-qgR"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Conver" image="ConvertIcon" id="Ajd-8a-khW"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="BKI-W5-zhv" id="x5T-ms-3wh"/>
                         <outlet property="textField" destination="qVM-N0-clc" id="NoQ-r9-tLE"/>
@@ -89,7 +104,29 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="115.27093596059113"/>
+            <point key="canvasLocation" x="772" y="115"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Fs1-ac-A8v">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SKp-2d-AZ0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="krh-pZ-kpD">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Sv4-j7-hAH"/>
+                        <segue destination="Vyq-jh-jQE" kind="relationship" relationship="viewControllers" id="kMS-01-sSp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLf-ar-YFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-615.20000000000005" y="114.53201970443351"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConvertIcon" width="48.333332061767578" height="32.333332061767578"/>
+        <image name="MapIcon" width="48.333332061767578" height="32.333332061767578"/>
+    </resources>
 </document>
